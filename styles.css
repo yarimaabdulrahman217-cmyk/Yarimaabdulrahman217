@@ -1,0 +1,528 @@
+/* style.css - NYSC 2026 SAED CLASS ATTENDANCE APP */
+/* Green & white theme with NYSC logo background */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background: #eef6eecontent://com.rhmsoft.code.provider/external/yarimajs%2Ccss%2Chtml/index.html
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(0,80,0,0.03) 0%, transparent 30%),
+    radial-gradient(circle at 90% 70%, rgba(0,100,0,0.04) 0%, transparent 40%);
+}
+
+/* Main app container - acts as card with logo watermark */
+.app-wrapper {
+  max-width: 1500px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.93);
+  backdrop-filter: blur(3px);
+  border-radius: 48px 48px 32px 32px;
+  padding: 24px 28px 32px;
+  box-shadow: 0 25px 45px rgba(0, 40, 0, 0.2);
+  border: 2px solid #1a6e1a;
+  position: relative;
+  overflow: hidden;
+}
+
+/* NYSC logo as watermark background (using text & flag icon) */
+.app-wrapper::before {
+  content: "NYSC \f024";
+  font-family: "Font Awesome 6 Free", "Segoe UI", sans-serif;
+  font-weight: 900;
+  position: absolute;
+  right: -30px;
+  bottom: -40px;
+  font-size: 200px;
+  color: rgba(0, 80, 0, 0.04);
+  pointer-events: none;
+  transform: rotate(-6deg);
+  letter-spacing: 12px;
+  z-index: 0;
+  text-shadow: 0 0 0 rgba(0,100,0,0.03);
+}
+
+/* Additional subtle flag icon overlay */
+.app-wrapper::after {
+  content: "\f024";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: -60px;
+  top: -40px;
+  font-size: 280px;
+  color: rgba(0, 80, 0, 0.025);
+  pointer-events: none;
+  transform: rotate(12deg);
+  z-index: 0;
+}
+
+/* ----- HEADER / LOGO AREA ----- */
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  background: linear-gradient(135deg, #f5fcf5, #e2f0e2);
+  border-radius: 80px;
+  padding: 8px 18px 8px 12px;
+  border: 2px solid #1d7a1d;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 6px 0 #c0ddc0;
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* NYSC Logo Box - green badge with flag icon */
+.nysc-logo-box {
+  background: #0a4f0a;
+  border-radius: 60px;
+  padding: 8px 20px 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 0 #1d6b1d;
+}
+
+.nysc-logo-box i {
+  font-size: 36px;
+  color: #d9f0d9;
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+}
+
+.nysc-logo-box span {
+  font-weight: 800;
+  color: white;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  background: #1e7a1e;
+  padding: 2px 12px;
+  border-radius: 40px;
+}
+
+h1 {
+  color: #054005;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+h1 small {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1f711f;
+  display: block;
+  margin-top: -4px;
+}
+
+/* ----- MENTOR AREA ----- */
+.mentor-area {
+  background: #e2f3e2;
+  padding: 6px 22px 6px 18px;
+  border-radius: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  border: 2px solid #1e7a1e;
+}
+
+.mentor-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #0a4f0a;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.mentor-item i {
+  color: #1d6b1d;
+  width: 20px;
+}
+
+.mentor-item input {
+  border: none;
+  background: white;
+  padding: 6px 14px;
+  border-radius: 40px;
+  border: 2px solid #a8cfa8;
+  font-weight: 500;
+  width: 150px;
+  color: #023102;
+  transition: 0.1s;
+}
+
+.mentor-item input:focus {
+  outline: 2px solid #1f7a1f;
+  border-color: transparent;
+}
+
+/* ----- DEPARTMENT GRID ----- */
+.dept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 28px 22px;
+  margin-top: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ----- DEPARTMENT CARD ----- */
+.dept-card {
+  background: #fafffa;
+  border-radius: 30px;
+  padding: 18px 18px 20px;
+  box-shadow: 0 8px 16px rgba(0, 40, 0, 0.06);
+  border: 2px solid #b8d9b8;
+  transition: 0.15s;
+  backdrop-filter: blur(2px);
+}
+
+.dept-card:hover {
+  border-color: #2b8c2b;
+  box-shadow: 0 12px 20px rgba(0, 70, 0, 0.08);
+}
+
+/* Department header */
+.dept-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px dashed #9ac09a;
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+}
+
+.dept-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #043804;
+  background: #daf0da;
+  padding: 0 18px 0 14px;
+  border-radius: 50px;
+  line-height: 2.2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dept-name i {
+  color: #1a6b1a;
+  font-size: 1rem;
+}
+
+.dept-actions button {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: #1b6b1b;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 30px;
+  transition: 0.1s;
+}
+
+.dept-actions button:hover {
+  background: #cde6cd;
+}
+
+.dept-actions .delete-dept {
+  color: #b33b3b;
+}
+
+.dept-actions .delete-dept:hover {
+  background: #fcdada;
+  color: #a00;
+}
+
+/* ----- ATTENDANCE META (day, date, time, etc) ----- */
+.attendance-meta {
+  background: #e8f3e8;
+  border-radius: 40px;
+  padding: 10px 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #144014;
+  margin-bottom: 16px;
+  border: 1px solid #b3d3b3;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.meta-item i {
+  color: #1a6b1a;
+  width: 18px;
+}
+
+.meta-item input,
+.meta-item select {
+  border: 2px solid #9ac09a;
+  background: white;
+  padding: 2px 8px;
+  border-radius: 30px;
+  font-weight: 500;
+  color: #003300;
+  max-width: 110px;
+  font-size: 0.85rem;
+}
+
+.meta-item input[type="time"] {
+  max-width: 100px;
+}
+
+.meta-item input[type="date"] {
+  max-width: 120px;
+}
+
+/* ----- PARTICIPANT LIST ----- */
+.participant-list {
+  list-style: none;
+  margin: 10px 0 8px;
+  max-height: 180px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.participant-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 6px 12px 6px 18px;
+  margin-bottom: 5px;
+  border-radius: 40px;
+  border-left: 6px solid #2d7a2d;
+  box-shadow: 0 2px 6px rgba(0, 40, 0, 0.04);
+  font-size: 0.95rem;
+}
+
+.participant-list .snum {
+  font-weight: 600;
+  color: #1b5e1b;
+  margin-right: 10px;
+  min-width: 28px;
+}
+
+.participant-list .pname {
+  flex: 1;
+  color: #023102;
+  font-weight: 500;
+}
+
+.participant-list .del-btn {
+  background: none;
+  border: none;
+  color: #b34747;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0 6px;
+}
+
+.participant-list .del-btn:hover {
+  color: #7a1f1f;
+  transform: scale(1.15);
+}
+
+/* ----- ADD PARTICIPANT ----- */
+.add-participant {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0 6px;
+}
+
+.add-participant input {
+  flex: 1;
+  border: 2px solid #8fc08f;
+  border-radius: 40px;
+  padding: 8px 16px;
+  font-weight: 500;
+  background: white;
+}
+
+.add-participant input:focus {
+  border-color: #1b731b;
+  outline: none;
+}
+
+.add-participant button {
+  background: #1a7a1a;
+  border: none;
+  border-radius: 40px;
+  padding: 0 22px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.1s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.add-participant button:hover {
+  background: #0d5f0d;
+  transform: scale(0.97);
+}
+
+/* ----- TOTAL / SERIAL ----- */
+.dept-total {
+  margin-top: 14px;
+  font-weight: 600;
+  color: #0a470a;
+  border-top: 1px solid #b8d9b8;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+.dept-total span {
+  background: #d7ecd7;
+  padding: 0 20px;
+  border-radius: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ----- ADD DEPARTMENT BUTTON ----- */
+.add-dept-btn {
+  background: #0f5f0f;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 14px 34px;
+  border-radius: 80px;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin: 20px auto 8px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 6px 0 #083308;
+  transition: 0.07s linear;
+  border: 2px solid #b4d6b4;
+}
+
+.add-dept-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #083308;
+}
+
+.footer-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ----- SCROLLBAR ----- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #daeeda;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2b7a2b;
+  border-radius: 10px;
+}
+
+/* ----- RESPONSIVE ----- */
+@media (max-width: 750px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mentor-area {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mentor-item input {
+    width: 100%;
+  }
+
+  .dept-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-wrapper {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .nysc-logo-box i {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-wrapper {
+    padding: 12px;
+    border-radius: 28px;
+  }
+
+  .dept-card {
+    padding: 14px;
+  }
+
+  .attendance-meta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+
+  .meta-item input {
+    max-width: 100% !important;
+    width: 100%;
+  }
+
+  .add-participant {
+    flex-wrap: wrap;
+  }
+
+  .add-participant button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .dept-total {
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+  }
+}
